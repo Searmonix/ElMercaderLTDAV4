@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script defer src="../scripts/gadgetEdit.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <title>El Mercader LTDA</title>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img width="25" height="25" src="https://img.icons8.com/small/16/small-business.png" alt="small-business" class="d-inlineblock align-text-top"/>
+            El Mercader LTDA
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="./home.html">Usuarios</a>
+              <a class="nav-link" href="./gadgetHome.html">Productos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <p>
+  </div>
+
+<div class="Title-1">
+
+    <div id="content">
+        <h2>Editar Usuario</h2>
+
+        <form id="EditGadgetForm" action="./home.html">
+
+            <div class="FormField">
+                <label for="gadgetId" class="form-label">
+                    <b>ID del producto : </b>
+                </label>  
+                <input type="text" placeholder="Ingresa un identificador" id="ProdEditId" class="form-control" name="gadgetId" disabled>
+                <span class="invalid-feedback" id="ErrorId" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                <label for="gadgetBrand" class="form-label">
+                    <b>Marca : </b>
+                </label>  
+                <input type="text" placeholder="Ingresa su marca" id="ProdEditBrand" class="form-control" name="gadgetBrand">
+                <span class="invalid-feedback" id="ErrorBrand" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                  <label for="gadgetCategory" class="form-label">
+                      <b>Categoría del Producto : </b>
+                  </label>  
+                  <input type="text" placeholder="Ingresa una categoría" id="ProdEditCategory" class="form-control" name="gadgetCategory">
+                  <span class="invalid-feedback" id="ErrorCategory" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                <label for="gadgetName" class="form-label">
+                    <b>Nombre : </b>
+                </label>  
+                <input type="text" placeholder="Ingresa un nombre" id="ProdEditName" class="form-control" name="gadgetName">
+                <span class="invalid-feedback" id="ErrorName" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                <label for="gadgetDescription" class="form-label">
+                    <b>Descripción : </b>
+                </label>  
+                <input type="text" placeholder="Agrega una descripción" id="ProdEditDescription" class="form-control" name="gadgetDescription">
+                <span class="invalid-feedback" id="ErrorDescription" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                  <label for="gadgetPrice" class="form-label">
+                      <b>Precio : </b>
+                  </label>  
+                  <input type="number" placeholder="Indica el precio" id="ProdEditPrice" class="form-control" name="gadgetPrice">
+                  <span class="invalid-feedback" id="ErrorPrice" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                  <label for="gadgetQuantity" class="form-label">
+                      <b>Cantidad : </b>
+                  </label>  
+                  <input type="number" placeholder="Confirma la contraseña" id="ProdEditQuantity" class="form-control" name="gadgetQuantity">
+                  <span class="invalid-feedback" id="ErrorQuantity" aria-live="polite"></span>
+              </div>
+
+              <div class="FormField">
+                <label for="gadgetPhoto" class="form-label">
+                    <b>Foto : </b>
+                </label>  
+                <input type="text" placeholder="Ingresa tu nombre" id="ProdEditPhoto" class="form-control" name="gadgetPhoto">
+                <span class="invalid-feedback" id="ErrorPhoto" aria-live="polite"></span>
+              </div>
+
+            <div class="FormField">
+                <button type="submit" class="btn btn-outline-success IngresarButton">Guardar Cambios</button>
+            </div>
+            
+        </form>           
+
+    </div>
+</div>
+
+<div>
+    <div class="FormField">
+        <button type="button" class="btn btn-outline-secondary justify-content-center d-inline-flex IngresarButton" style="align-self: center; width: 25%;" onclick="location.href='./gadgetHome.html';">Regresar</button>
+    </div>
+</div>
+
+    
+</body>
+</html>
