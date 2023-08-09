@@ -1,8 +1,7 @@
 package com.example.ElMercaderLTDA.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ElMercaderLTDA.Model.Orders;
 import com.example.ElMercaderLTDA.Services.OrderServices;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -47,15 +47,23 @@ public class OrdersController {
     }
 
     // state/{state}/{id}
+    @GetMapping("/state/{state}/{id}")
+    public List<Orders> getOrdersByStatusAndSalesman(@PathVariable String state, @PathVariable int id) {
+        return orderServices.getOrdersByStatusAndSalesman(state, id);
+    }
 
     // salesman/{id}
-
     @GetMapping("/salesman/{id}")
     public List<Orders> getOrdersBySalesMan(@PathVariable int id) {
         return orderServices.getOrdersBySalesMan(id);
     }
 
     // date/{date}/{id}
+    @GetMapping("/date/{date}/{id}")
+    public List<Orders> getOrdersByDateAndSalesMan(@PathVariable 
+        @DateTimeFormat(pattern = "yyyy-MM-dd") Date date, @PathVariable int id) {
+        return orderServices.getOrdersByDateAndSalesMan(date, id);
+    }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)

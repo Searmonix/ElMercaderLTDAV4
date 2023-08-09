@@ -2,6 +2,7 @@ package com.example.ElMercaderLTDA.Services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,15 @@ public class OrderServices {
     }
 
     public List<Orders> getOrdersBySalesMan(int id) {
-        return ordersRepository.findAllBySalesMan__Id(id);
+        return ordersRepository.findAllBySalesMan_id(id);
+    }
+
+    public List<Orders> getOrdersByDateAndSalesMan(Date date, int id) {
+        return ordersRepository.findAllByRegisterDayAndSalesMan_id(date, id);
+    }
+
+    public List<Orders> getOrdersByStatusAndSalesman(String state, int id) {
+        return ordersRepository.findAllByStatusAndSalesMan_id(state, id);
     }
 
     public Orders save(Orders orders) {
