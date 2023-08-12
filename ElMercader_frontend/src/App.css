@@ -1,0 +1,65 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 10 px;
+}
+
+.FormContainer {
+  margin-top: 2rem;
+}
+
+form#LoginForm {
+  margin: auto;
+  width: 50%;
+}
+
+form#AccCreationForm {
+    margin: auto;
+    width: 50%;
+  }
+
+div.FormField {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+div.buttonToIndex {
+  display: flex;
+  align-items:end;
+  margin: 1rem;
+}
+
+.IngresarButton {
+  margin-top: 1rem;
+}
+
+.MiniText {
+  text-align: left;
+}
+
+.FormField span {
+  border-color: rgb(240, 27, 27);
+
+}
+
+.close {
+  margin: auto;
+}
+
+.buttonToIndex {
+  margin: auto;
+  width: 50%;
+}
+
+h3#userRegistered {
+  margin: 2rem;
+}
+
+.buttonRight {
+  margin: 1rem;
+}
+
+.buttonLeft {
+  margin: 1rem;
+}
