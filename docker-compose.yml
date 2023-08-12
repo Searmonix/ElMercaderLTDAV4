@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # api contiene todo el backend, donde nginx redirigirá al back como "api"
+  api:
+    build: ./ElMercader_backend
+    ports:
+    # El proyecto, desde el localhost está utilizando el puerto 8081
+    # nginx usa el 8080
+      - 8081:8080
+    environment:
+      - MONGO_URI=${MONGO_URI}
+
+  # Agregar un servicio que sea dedicado al front
+  view:
+    build: ./ElMercader_frontend
+    ports:
+      - 3000:3000
+    environment:
+      - API_URI=${API_URI}
+    depends_on:
+      - api
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+    depends_on:
+      - view
+  
