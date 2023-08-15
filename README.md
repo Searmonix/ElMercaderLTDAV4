@@ -39,3 +39,6 @@ TZ=Continent/City
 ```
 Feel free to contact me if any doubt arises.
 Hope you enjoy the code!
+## Authors
+Diego Hernández
+<a href="https://www.linkedin.com/in/alejandrohzz/"><img src="https://skillicons.dev/icons?i=linkedin"></a>
