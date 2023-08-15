@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+
+  mongo: 
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: ElMercaderLTDA
+    volumes:
+      - mongo_db_data:/data/db
+      - ./ElMercader_mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+
+    
   # api contiene todo el backend, donde nginx redirigirá al back como "api"
   api:
     build: ./ElMercader_backend
@@ -9,8 +21,10 @@ services:
     # nginx usa el 8080
       - 8081:8080
     environment:
-      - MONGO_URI=${MONGO_URI}
+      - MONGO_URI=${MONGO_URI:-mongodb://root:root@mongo:27017/ElMercaderLTDA}
       - TZ=${TZ:-America/Bogota}
+    depends_on:
+      - mongo
 
   # Agregar un servicio que sea dedicado al front
   view:
@@ -30,4 +44,8 @@ services:
       - 80:80
     depends_on:
       - view
+
+
+volumes:
+  mongo_db_data:
   
