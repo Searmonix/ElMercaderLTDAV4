@@ -5,8 +5,8 @@ Reto 4 Universidad Sergio Arboleda
 This application is interpreted on Ubuntu 22.04 LTS using Docker (v 24.0.5)
 
 ## System Requirements
-[Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-[Docker] (https://docs.docker.com/engine/install/)
+- [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Docker] (https://docs.docker.com/engine/install/)
 
 ### Installation
 To set up a local develompent environment, follow these instructions:
