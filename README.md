@@ -41,5 +41,7 @@ Feel free to contact me if any doubt arises.
 Hope you enjoy the code!
 ## Authors
 Diego Hernández
-<a href="https://www.linkedin.com/in/alejandrohzz/"><img src="https://skillicons.dev/icons?i=linkedin" padding=12 height=20 width=20></a>
-<a href="https://www.github.com/Searmonix"><img src="https://skillicons.dev/icons?i=github" padding=12 height=20 width=20></a>
+<div>
+  <a href="https://www.linkedin.com/in/alejandrohzz/"><img src="https://skillicons.dev/icons?i=linkedin" padding=12 height=20 width=20></a>
+  <a href="https://www.github.com/Searmonix"><img src="https://skillicons.dev/icons?i=github" padding=12 height=20 width=20></a>
+</div>
