@@ -27,6 +27,4 @@ public class User {
     private String password;
     private String zone;
     private String type;
-
-
 }

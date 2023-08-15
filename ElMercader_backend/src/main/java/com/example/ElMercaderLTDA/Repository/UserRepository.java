@@ -11,7 +11,6 @@ import java.util.List;
 
 
 public interface UserRepository extends MongoRepository<User, Integer>{
-    
     // Encontrar por email digitado
     // @Query("{ 'email' : ?0}")  
     // ?0 significa el primer parámetro, email

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 import com.example.ElMercaderLTDA.Model.Orders;
 
@@ -15,6 +16,7 @@ public interface OrdersRepository extends MongoRepository<Orders, Integer> {
 
     public List<Orders> findAllByStatusAndSalesMan_id(String state, int id);
 
+    @Query("{'registerDay' : ?0, 'salesMan_Id' : ?1}")
     public List<Orders> findAllByRegisterDayAndSalesMan_id(Date date, int id);
 
 }

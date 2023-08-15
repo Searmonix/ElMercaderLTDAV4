@@ -27,7 +27,7 @@ import java.util.List;
 })
 @RequestMapping("/api/order")
 public class OrdersController {
-    
+
     @Autowired
     OrderServices orderServices;
 
@@ -62,6 +62,7 @@ public class OrdersController {
     @GetMapping("/date/{date}/{id}")
     public List<Orders> getOrdersByDateAndSalesMan(@PathVariable 
         @DateTimeFormat(pattern = "yyyy-MM-dd") Date date, @PathVariable int id) {
+            System.out.println(date);
         return orderServices.getOrdersByDateAndSalesMan(date, id);
     }
 

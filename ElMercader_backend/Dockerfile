@@ -1,8 +1,12 @@
 FROM maven:3.9.3-amazoncorretto-17-debian AS javaimage
 
-# RUN apt-get install maven java-17-openjdk-devel -y \
-#     && update-alternatives --config java
+# Para imagen de Fedora
+# FROM fedora:latest AS javaimage
+# RUN dnf update -y && dnf install maven java-17-openjdk-devel -y \
+#      && update-alternatives --auto java \
+# 	 && update-alternatives --auto javac
 
+# Para imagen de Ubuntu
 RUN addgroup --gid 1000 java \
  	&& adduser --disabled-password --uid 1000 --gid 1000 java \
  	&& chown java:java /usr/bin/java \
@@ -10,18 +14,24 @@ RUN addgroup --gid 1000 java \
  	&& chmod +x /usr/bin/java \
     && chmod +x /usr/bin/mvn
 
+# Fedora
+# RUN useradd -u 1000 -m -d /home/java -s /bin/bash java \
+# #	&& groupadd -g 1000 java \
+# 	&& usermod -aG java java \
+# 	&& chmod +x /usr/bin/java \
+#     && chmod +x /usr/bin/mvn
+
+
 # build stage
 FROM javaimage AS builderzz
 
 WORKDIR /usr/src/app
 
-#COPY --chown=java:java . .
-
-COPY . .
+COPY --chown=java:java . .
 
 RUN mvn clean package -DskipTests
 
-# execution stage
+# # execution stage
 FROM javaimage
 
 WORKDIR /usr/src/app
